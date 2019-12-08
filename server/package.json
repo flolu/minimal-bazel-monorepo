@@ -1,8 +1,10 @@
 {
   "name": "@lbm/server",
   "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {},
+  "main": "dist/index.js",
+  "dependencies": {
+    "@lbm/enums": "1.0.0"
+  },
   "devDependencies": {
     "@bazel/bazel": "^1.2.0",
     "@bazel/buildifier": "^0.29.0",

@@ -1,7 +1,7 @@
 {
   "name": "@lbm/enums",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
     "@bazel/bazel": "^1.2.0",

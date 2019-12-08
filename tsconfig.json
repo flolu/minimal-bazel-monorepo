@@ -1,7 +1,4 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "lib": ["es2015.promise", "dom", "es5"],
-    "types": []
-  }
+  "files": [],
+  "references": [{ "path": "enums" }, { "path": "server" }]
 }

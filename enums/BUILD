@@ -2,13 +2,15 @@ load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
 load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 ts_library(
-    name = "compile",
+    name = "enums",
     srcs = ["src/index.ts"],
+    module_name = "@lbm/enums",
+    visibility = ["@example//server:__pkg__"],
 )
 
 filegroup(
     name = "enums.js",
-    srcs = ["compile"],
+    srcs = ["enums"],
     output_group = "es5_sources",
 )
 

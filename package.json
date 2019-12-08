@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "server"
+    "server",
+    "enums"
   ],
   "dependencies": {},
   "devDependencies": {
@@ -12,5 +13,8 @@
     "@bazel/ibazel": "^0.10.3",
     "@bazel/typescript": "^0.42.2",
     "typescript": "^3.7.3"
+  },
+  "scripts": {
+    "build": "tsc --build"
   }
 }

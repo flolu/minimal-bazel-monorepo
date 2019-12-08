@@ -2,13 +2,14 @@ load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
 load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 ts_library(
-    name = "compile",
+    name = "server",
     srcs = ["src/index.ts"],
+    deps = ["//enums"],
 )
 
 filegroup(
     name = "server.js",
-    srcs = ["compile"],
+    srcs = ["server"],
     output_group = "es5_sources",
 )
 
