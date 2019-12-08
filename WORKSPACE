@@ -13,10 +13,10 @@ http_archive(
 load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
 yarn_install(
     name = "npm",
-    package_json = "//server:package.json",
-    yarn_lock = "//server:yarn.lock",
+    package_json = "//:package.json",
+    yarn_lock = "//:yarn.lock",
+    symlink_node_modules = False
 )
-
 load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
 install_bazel_dependencies()
 

@@ -14,6 +14,5 @@ filegroup(
 
 nodejs_image(
     name = "app",
-    #entry_point = "src/index.js",
     entry_point = "server.js",
 )
