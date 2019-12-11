@@ -1,13 +1,7 @@
 ## Run server
 
 ```
-bazel run //server:app
-```
-
-## Run enums
-
-```
-bazel run //enums:app
+bazel run //server:server
 ```
 
 ## Build everything
