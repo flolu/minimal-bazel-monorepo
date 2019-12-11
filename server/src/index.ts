@@ -1,4 +1,4 @@
-// import { List } from '@lbm/enums';
-// console.log('server starting.... list element: ', List.Element);
+import { name } from './util';
 
-console.log('server starting.... list element: ');
+console.log('server starting...');
+console.log('hello ', name);

@@ -10,6 +10,7 @@
     "@bazel/buildifier": "^0.29.0",
     "@bazel/ibazel": "^0.10.3",
     "@bazel/typescript": "^0.42.2",
+    "@types/node": "^12.12.17",
     "typescript": "^3.7.3"
   }
 }
