@@ -14,6 +14,6 @@ filegroup(
 
 nodejs_image(
     name = "server",
-    data = ["files"],
-    entry_point = "server/src/index.js",
+    data = [":files"],
+    entry_point = "dist/index.js",
 )
