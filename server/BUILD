@@ -3,16 +3,15 @@ load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 ts_library(
     name = "lib",
-    srcs = [
-        "util.ts",
-    ],
+    srcs = glob(
+        include = [ "**/*.ts" ],
+        exclude = [ "src/index.ts" ]
+    )
 )
 
 ts_library(
     name = "main",
-    srcs = [
-        "index.ts",
-    ],
+    srcs = [ "src/index.ts" ],
     deps = [":lib"],
 )
 
