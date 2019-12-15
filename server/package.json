@@ -1,7 +1,6 @@
 {
   "name": "@lbm/server",
   "version": "1.0.0",
-  "main": "dist/index.js",
   "dependencies": {
     "@lbm/enums": "1.0.0"
   },
