@@ -1,3 +1,4 @@
+workspace(name = 'lbm')
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
@@ -18,7 +19,6 @@ install_bazel_dependencies()
 
 load("@npm_bazel_typescript//:index.bzl", "ts_setup_workspace")
 ts_setup_workspace()
-
 
 http_archive(
     name = "io_bazel_rules_docker",

@@ -5,14 +5,15 @@ ts_library(
     name = "lib",
     srcs = glob(
         include = [ "**/*.ts" ],
-        exclude = [ "src/index.ts" ]
-    )
+        exclude = [ "src/index.ts" ],
+    ),
+    deps = ["//enums:enums"]
 )
 
 ts_library(
     name = "main",
     srcs = [ "src/index.ts" ],
-    deps = [":lib"],
+    deps = ["//enums:enums", ":lib"],
 )
 
 filegroup(
