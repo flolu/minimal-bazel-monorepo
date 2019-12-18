@@ -20,3 +20,14 @@ nodejs_image(
     data = [":lib"],
     entry_point = ":index.ts",
 )
+
+load("@io_bazel_rules_docker//container:container.bzl", "container_push")
+
+container_push(
+   name = "push_server",
+   image = ":server",
+   format = "Docker",
+   registry = "gcr.io",
+   repository = "learning-bazel-monorepo/server",
+   tag = "dev",
+)

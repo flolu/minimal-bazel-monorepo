@@ -17,3 +17,11 @@ bazel build //services/server
 - Build Typescript libraries
 - Link different packages into Typescript library
 - Build Node.Js image
+
+# Pushing Images to GCR
+
+Install `gcloud` https://www.addictivetips.com/ubuntu-linux-tips/install-google-cloud-sdk-on-linux/ and authenticate
+
+```
+bazel run //services/server:push_server
+```
