@@ -3,19 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@lbm/*": ["packages/*"]
-    },
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "preserveConstEnums": true,
-    "removeComments": true,
-    "target": "es6",
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "lib": ["es2017", "dom"]
+    }
   },
   "exclude": ["bazel-*", "node_modules"]
 }

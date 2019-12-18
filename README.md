@@ -1,4 +1,4 @@
 ```
-bazel run //packages/server:image
-bazel build //packages/server:image
+bazel run //services/server
+bazel build //services/server
 ```
