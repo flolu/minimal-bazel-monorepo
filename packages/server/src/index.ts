@@ -1,5 +1,5 @@
-import { add } from './util';
 import { Constants } from '@lbm/enums';
+import { add } from './util';
 
 const a = 13;
 const b = 29;

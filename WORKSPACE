@@ -1,4 +1,5 @@
 workspace(name = 'lbm')
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
@@ -7,7 +8,8 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/0.42.2/rules_nodejs-0.42.2.tar.gz"],
 )
 
-load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
+load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories","yarn_install")
+node_repositories(package_json = ["//:package.json"])
 yarn_install(
     name = "npm",
     package_json = "//:package.json",

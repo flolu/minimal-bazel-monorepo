@@ -1,4 +1,17 @@
 {
-  "files": [],
-  "references": [{ "path": "enums" }, { "path": "server" }]
+  "compilerOptions": {
+    "strict": true,
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declarationMap": true,
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lbm/*": ["packages/*"]
+    }
+  },
+  "exclude": ["bazel-*", "node_modules"]
 }
