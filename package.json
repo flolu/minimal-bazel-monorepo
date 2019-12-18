@@ -3,8 +3,11 @@
     "@bazel/bazel": "^1.2.0",
     "@bazel/buildifier": "^0.29.0",
     "@bazel/typescript": "^0.42.2",
-    "typescript": "^3.7.3",
-    "@types/node": "^12.12.17"
+    "@types/faker": "^4.1.8",
+    "@types/node": "^12.12.17",
+    "typescript": "^3.7.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
 }

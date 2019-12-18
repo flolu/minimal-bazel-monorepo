@@ -7,6 +7,8 @@ ts_library(
     name = "server",
     srcs = glob(["**/*.ts"]),
     deps = [
+        "@npm//faker",
+        "@npm//@types/faker",
         "//packages/enums:enums",
     ],
 )

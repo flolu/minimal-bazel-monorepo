@@ -1,7 +1,0 @@
-{
-  "name": "@lbm/enums",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "private": true,
-  "dependencies": {}
-}
