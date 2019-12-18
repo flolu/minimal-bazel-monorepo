@@ -7,13 +7,13 @@ ts_library(
         include = [ "**/*.ts" ],
         exclude = [ "src/index.ts" ],
     ),
-    deps = ["//enums:enums"]
+    deps = ["//packages/enums:enums"]
 )
 
 ts_library(
     name = "main",
     srcs = [ "src/index.ts" ],
-    deps = ["//enums:enums", ":lib"],
+    deps = ["//packages/enums:enums", ":lib"],
 )
 
 filegroup(
