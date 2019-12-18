@@ -1,4 +1,4 @@
-import { Constants } from '@lbm/enums';
+import { Constants } from '@lbm/enums/src';
 import { add } from './util';
 
 const a = 13;

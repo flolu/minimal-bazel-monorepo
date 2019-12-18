@@ -1,5 +1,5 @@
 ## Run server
 
 ```
-bazel run //packages/server:server
+bazel run //packages/server:image
 ```
