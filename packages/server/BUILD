@@ -14,5 +14,5 @@ ts_library(
 nodejs_image(
     name = "image",
     data = [":server"],
-    entry_point = ":src/index.ts",
+    entry_point = ":index.ts",
 )

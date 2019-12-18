@@ -1,0 +1,7 @@
+{
+  "name": "@lbm/server",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "private": true,
+  "dependencies": {}
+}
