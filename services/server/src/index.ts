@@ -2,11 +2,14 @@ import * as faker from 'faker';
 import * as express from 'express';
 
 import { Constants } from '@lbm/enums';
+import { hello } from '@lbm/hello';
 
 import { add } from './util';
 
 export const start = () => {
   const app = express();
+
+  console.log(hello('test'));
 
   app.get('/alive', (req, res) => res.send('alive'));
 

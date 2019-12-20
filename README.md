@@ -1,6 +1,13 @@
 ```
-bazel run //services/server
-bazel build //services/server
+bazel build //services/server/src:server
+bazel run //services/server/src:server
+```
+
+Stop node.js process
+
+```
+docker ps -a
+docker kill <id>
 ```
 
 # Todo
