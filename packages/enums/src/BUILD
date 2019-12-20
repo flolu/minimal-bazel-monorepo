@@ -4,6 +4,9 @@ load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 ts_library(
     name = "lib",
-    srcs = glob(["**/*.ts"]),
-    module_name = "@lbm/enums",
+    srcs = glob(
+        include = ["**/*.ts"],
+        exclude = ["**/*.spec.ts"]
+    ),
+    module_name = "@lbm/enums"
 )

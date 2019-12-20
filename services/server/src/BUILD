@@ -3,9 +3,16 @@ package(default_visibility = ["//visibility:public"])
 load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
 load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
+# TODO Run jest tests and stop build if test not passes
+# TODO also run tests from deps packages
+# load("@lbm//:jest.bzl", "jest_test")
+
 ts_library(
     name = "lib",
-    srcs = glob(["**/*.ts"]),
+    srcs = glob(
+        include = ["**/*.ts"],
+        exclude = ["**/*.spec.ts"]
+    ),
     deps = [
         "//packages/enums/src:lib",
         "//packages/hello/src:lib",
