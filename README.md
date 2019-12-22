@@ -11,6 +11,10 @@ docker ps -a
 docker kill <id>
 ```
 
+```
+docker stop $(docker ps -a -q)
+```
+
 # Todo
 
 - Deploy new image to Kubernetes
@@ -18,7 +22,7 @@ docker kill <id>
 - Deploy for all services
 - Deploy automatically when committing to repository
 - Implement an Angular app
-- Use bazel for local development (watch for code changes, etc.)
+- OPTIONAL: Use bazel for local development (watch for code changes, etc.)
 
 # Done
 

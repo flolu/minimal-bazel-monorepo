@@ -1,5 +1,6 @@
 import * as faker from 'faker';
 import * as express from 'express';
+import * as cors from 'cors';
 
 import { Constants } from '@lbm/enums';
 import { hello } from '@lbm/hello';
@@ -11,11 +12,13 @@ export const start = () => {
 
   console.log(hello('test'));
 
+  app.use(cors());
+
   app.get('/alive', (req, res) => res.send('alive'));
 
   app.get('/name', (req, res) => {
     const name = faker.name.findName();
-    res.send(`My name is ${name}`);
+    res.json({ name });
   });
 
   app.get('**', (req, res) => {

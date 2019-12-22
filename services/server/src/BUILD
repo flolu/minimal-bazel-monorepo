@@ -36,6 +36,7 @@ ts_library(
         "@npm//@types/faker",
         "@npm//express",
         "@npm//@types/express",
+        "@npm//cors",
     ],
 )
 
