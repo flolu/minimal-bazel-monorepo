@@ -1,6 +1,7 @@
 ```
 bazel build //services/server/src:server
 bazel run //services/server/src:server
+bazel run //services/server/src:push_server
 ```
 
 Stop node.js process
@@ -12,18 +13,19 @@ docker kill <id>
 
 # Todo
 
-- Push Docker image to container registry
 - Deploy new image to Kubernetes
 - Run tests before applying changes
 - Deploy for all services
-- Deploy automatically when pushing to repository
+- Deploy automatically when committing to repository
 - Implement an Angular app
+- Use bazel for local development (watch for code changes, etc.)
 
 # Done
 
 - Build Typescript libraries
 - Link different packages into Typescript library
 - Build Node.Js image
+- Push Docker image to container registry
 
 # Pushing Images to GCR
 

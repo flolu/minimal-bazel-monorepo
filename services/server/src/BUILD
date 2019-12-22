@@ -57,3 +57,14 @@ container_push(
    repository = "learning-bazel-monorepo/server",
    tag = "dev",
 )
+
+load("@io_bazel_rules_k8s//k8s:object.bzl", "k8s_object")
+
+k8s_object(
+  name = "deploy_server",
+  kind = "deployment",
+  template = ":server.yaml",
+  images = {
+    "gcr.io/rules_k8s/server:dev": ":server"
+  },
+)
