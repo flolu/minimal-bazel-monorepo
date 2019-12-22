@@ -32,5 +32,11 @@ docker kill <id>
 Install `gcloud` https://www.addictivetips.com/ubuntu-linux-tips/install-google-cloud-sdk-on-linux/ and authenticate
 
 ```
-bazel run //services/server:push_server
+bazel run //services/server/src:push_server
+```
+
+# Deploying to Kubernetes (not working yet)
+
+```
+bazel run //services/server/src:k8s_deploy
 ```

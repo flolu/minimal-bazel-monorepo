@@ -1,8 +1,5 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
-load("@npm_bazel_typescript//:index.bzl", "ts_library")
-
 # TODO run jest tests and stop build if test not passes
 # TODO also run tests from dependent packages
 load("@lbm//:jest.bzl", "jest_test")
@@ -25,6 +22,7 @@ jest_test(
     ],
 )
 
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
 ts_library(
     name = "lib",
     srcs = glob(
@@ -41,6 +39,7 @@ ts_library(
     ],
 )
 
+load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
 nodejs_image(
     name = "server",
     data = [":lib"],
@@ -48,7 +47,6 @@ nodejs_image(
 )
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_push")
-
 container_push(
    name = "push_server",
    image = ":server",
@@ -59,12 +57,12 @@ container_push(
 )
 
 load("@io_bazel_rules_k8s//k8s:object.bzl", "k8s_object")
-
 k8s_object(
-  name = "deploy_server",
+  name = "k8s_deploy",
   kind = "deployment",
+  namespace = "default",
   template = ":server.yaml",
   images = {
-    "gcr.io/rules_k8s/server:dev": ":server"
+    "deploy_server:do_not_delete": ":server"
   },
 )
