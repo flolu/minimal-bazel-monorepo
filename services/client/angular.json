@@ -11,63 +11,27 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular/bazel:build",
           "options": {
-            "outputPath": "dist/client",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "aot": false,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+            "targetLabel": "//src:prodapp",
+            "bazelCommand": "build"
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
+              "targetLabel": "//src:prodapp"
             }
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/bazel:build",
           "options": {
-            "browserTarget": "client:build"
+            "targetLabel": "//src:devserver",
+            "bazelCommand": "run",
+            "watch": true
           },
           "configurations": {
             "production": {
-              "browserTarget": "client:build:production"
+              "targetLabel": "//src:prodserver"
             }
           }
         },
@@ -78,20 +42,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/bazel:build",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+            "bazelCommand": "test",
+            "targetLabel": "//src:test"
           }
         },
         "lint": {
@@ -108,14 +62,14 @@
           }
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@angular/bazel:build",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "client:serve"
+            "bazelCommand": "test",
+            "targetLabel": "//e2e:devserver_test"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "client:serve:production"
+              "targetLabel": "//e2e:prodserver_test"
             }
           }
         }
