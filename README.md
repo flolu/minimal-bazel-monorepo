@@ -1,6 +1,8 @@
 ```
 bazel build //services/server/src:server
 bazel run //services/server/src:server
+ibazel run //services/server/src:server
+
 bazel run //services/server/src:push_server
 ```
 
@@ -13,6 +15,7 @@ docker kill <id>
 
 ```
 docker stop $(docker ps -a -q)
+docker system prune --volumes
 ```
 
 # Todo

@@ -2,6 +2,7 @@
   "cSpell.words": [
     "Kubernetes",
     "bazel",
-    "buildifier"
+    "buildifier",
+    "ibazel"
   ]
 }

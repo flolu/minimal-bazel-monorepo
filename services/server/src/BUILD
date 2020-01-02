@@ -64,6 +64,6 @@ k8s_object(
   namespace = "default",
   template = ":server.yaml",
   images = {
-    "deploy_server:do_not_delete": ":server"
+    "gcr.io/learning-bazel-monorepo/deploy_server:do_not_delete": ":server"
   },
 )

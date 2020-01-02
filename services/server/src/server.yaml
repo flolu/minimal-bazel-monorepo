@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: deploy_server:do_not_delete
+          image: gcr.io/learning-bazel-monorepo/deploy_server:do_not_delete
           readinessProbe:
             httpGet:
               path: /alive
