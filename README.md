@@ -1,7 +1,7 @@
 ```
 bazel build //services/server/src:server
 bazel run //services/server/src:server
-ibazel run //services/server/src:server
+ibazel run //services/server/src:dev_server
 
 bazel run //services/server/src:push_server
 ```
@@ -25,7 +25,7 @@ docker system prune --volumes
 - Deploy for all services
 - Deploy automatically when committing to repository
 - Implement an Angular app
-- OPTIONAL: Use bazel for local development (watch for code changes, etc.)
+- Bazel watcher for local development (watch for code changes, etc.)
 
 # Done
 

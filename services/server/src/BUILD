@@ -47,6 +47,13 @@ nodejs_image(
     entry_point = ":index.ts",
 )
 
+load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
+nodejs_binary(
+    name = "dev_server",
+    data = [":lib"],
+    entry_point = ":index.ts",
+)
+
 load("@io_bazel_rules_docker//container:container.bzl", "container_push")
 container_push(
    name = "push_server",
