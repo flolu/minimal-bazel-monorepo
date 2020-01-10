@@ -72,12 +72,12 @@ nodejs_binary(
 
 # // TODO fix: this throws weird error after updating to 1.0.1
 
-#load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
-#nodejs_image(
-#    name = "server",
-#    data = [":lib"],
-#    entry_point = ":index.ts",
-#)
+load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
+nodejs_image(
+    name = "server",
+    data = [":lib"],
+    entry_point = ":index.ts",
+)
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_push")
 container_push(
