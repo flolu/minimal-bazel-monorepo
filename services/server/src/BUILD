@@ -5,13 +5,31 @@ package(default_visibility = ["//visibility:public"])
 
 load("@npm_bazel_typescript//:index.bzl", "ts_library")
 ts_library(
-    name = "test_lib",
-    #srcs = ["util.spec.ts", "util.ts"],
+    name = "lib",
     srcs = glob(
         include = ["**/*.ts"],
+        exclude = ["**/*.spec.ts"]
+    ),
+    deps = [
+        "//packages/enums/src:lib",
+        "//packages/hello/src:lib",
+        "@npm//faker",
+        "@npm//@types/faker",
+        "@npm//express",
+        "@npm//@types/express",
+        "@npm//cors",
+    ],
+)
+
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+ts_library(
+    name = "test_lib",
+    srcs = glob(
+        include = ["**/*.spec.ts"],
     ),
     tsconfig = "//:tsconfig.jest.json",
     deps = [
+        ":lib",
         "//packages/enums/src:lib",
         "//packages/hello/src:lib",
         "@npm//faker",
@@ -43,24 +61,6 @@ jest_test(
         "@npm//faker",
         "@npm//express",
         "@npm//jest",
-    ],
-)
-
-load("@npm_bazel_typescript//:index.bzl", "ts_library")
-ts_library(
-    name = "lib",
-    srcs = glob(
-        include = ["**/*.ts"],
-        exclude = ["**/*.spec.ts"]
-    ),
-    deps = [
-        "//packages/enums/src:lib",
-        "//packages/hello/src:lib",
-        "@npm//faker",
-        "@npm//@types/faker",
-        "@npm//express",
-        "@npm//@types/express",
-        "@npm//cors",
     ],
 )
 
