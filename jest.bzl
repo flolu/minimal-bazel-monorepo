@@ -9,9 +9,9 @@ def jest_test(name, srcs, deps, jest_config, **kwargs):
         "--no-watchman",
         "--ci",
     ]
-    args.extend(["--config", "$(location %s)" % jest_config])
+    args.extend(["--config", "$(locations %s)" % jest_config])
     for src in srcs:
-        args.extend(["--runTestsByPath", "$(location %s)" % src])
+        args.extend(["--runTestsByPath", "$(locations %s)" % src])
 
     _jest_test(
         name = name,

@@ -8,6 +8,12 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/1.0.1/rules_nodejs-1.0.1.tar.gz"],
 )
 
+#http_archive(
+#    name = "build_bazel_rules_nodejs",
+#    sha256 = "16fc00ab0d1e538e88f084272316c0693a2e9007d64f45529b82f6230aedb073",
+#    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/0.42.2/rules_nodejs-0.42.2.tar.gz"],
+#)
+
 load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories","yarn_install")
 node_repositories(package_json = ["//:package.json"])
 yarn_install(
