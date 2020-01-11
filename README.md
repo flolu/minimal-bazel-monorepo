@@ -1,16 +1,11 @@
 ```
-bazel build //services/server/src:server
-bazel run //services/server/src:server
-ibazel run //services/server/src:dev_server
+bazel run dev
+bazel test //...
 
-bazel run //services/server/src:push_server
-```
-
-Stop node.js process
-
-```
-docker ps -a
-docker kill <id>
+bazel build //services/server:server
+bazel run //services/server:server
+ibazel run //services/server:dev_server
+ibazel run //services/another-server:dev_server
 ```
 
 ```
@@ -40,11 +35,11 @@ docker system prune --volumes
 Install `gcloud` https://www.addictivetips.com/ubuntu-linux-tips/install-google-cloud-sdk-on-linux/ and authenticate
 
 ```
-bazel run //services/server/src:push_server
+bazel run //services/server:push_server
 ```
 
 # Deploying to Kubernetes (not working yet)
 
 ```
-bazel run //services/server/src:k8s_deploy
+bazel run //services/server:k8s_deploy
 ```

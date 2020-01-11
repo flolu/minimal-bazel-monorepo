@@ -17,6 +17,7 @@ yarn_install(
     yarn_lock = "//:yarn.lock",
     symlink_node_modules = False
 )
+
 load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
 install_bazel_dependencies()
 
@@ -30,7 +31,6 @@ http_archive(
     strip_prefix = "rules_docker-0.13.0",
     urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.13.0/rules_docker-v0.13.0.tar.gz"],
 )
-
 load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
 container_repositories()
 load("@io_bazel_rules_docker//nodejs:image.bzl", _nodejs_image_repos = "repositories")
@@ -55,11 +55,8 @@ http_archive(
     ],
     sha256 = "b27e55d2dcc9e6020e17614ae6e0374818a3e3ce6f2024036e688ada24110444",
 )
-
 load("@io_bazel_rules_go//go:deps.bzl", "go_rules_dependencies", "go_register_toolchains")
-
 go_rules_dependencies()
-
 go_register_toolchains()
 
 # multirun
@@ -68,7 +65,5 @@ git_repository(
     commit = "c606a4611f18348a4e9737e1fe60533d163ce9f7",
     remote = "https://github.com/atlassian/bazel-tools.git",
 )
-
 load("@com_github_atlassian_bazel_tools//multirun:deps.bzl", "multirun_dependencies")
-
 multirun_dependencies()

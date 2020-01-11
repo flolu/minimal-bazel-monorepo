@@ -10,8 +10,8 @@ ts_library(
         exclude = ["**/*.spec.ts"]
     ),
     deps = [
-        "//packages/enums/src:lib",
-        "//packages/hello/src:lib",
+        "//packages/enums:lib",
+        "//packages/hello:lib",
         "@npm//faker",
         "@npm//@types/faker",
         "@npm//express",
@@ -27,8 +27,8 @@ ts_library(
     tsconfig = "//:tsconfig.jest.json",
     deps = [
         ":lib",
-        "//packages/enums/src:lib",
-        "//packages/hello/src:lib",
+        "//packages/enums:lib",
+        "//packages/hello:lib",
         "@npm//faker",
         "@npm//@types/faker",
         "@npm//express",
@@ -53,8 +53,8 @@ jest_test(
     jest_config = "@lbm//:jest.config.js",
     deps = [
         ":lib",
-        "//packages/enums/src:lib",
-        "//packages/hello/src:lib",
+        "//packages/enums:lib",
+        "//packages/hello:lib",
         "@npm//faker",
         "@npm//express",
         "@npm//jest",

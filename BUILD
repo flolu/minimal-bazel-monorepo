@@ -16,10 +16,10 @@ ts_config(
 
 load("@com_github_atlassian_bazel_tools//multirun:def.bzl", "multirun", "command")
 multirun(
-    name = "run_all_parallel",
+    name = "dev",
     commands = [
-        "//services/server/src:dev_server",
-        "//services/another-server/src:dev_server",
+        "//services/server:dev_server",
+        "//services/another-server:dev_server",
     ],
     parallel = True,
 )
