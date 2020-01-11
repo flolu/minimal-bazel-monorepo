@@ -26,6 +26,7 @@ docker system prune --volumes
 - Deploy automatically when committing to repository
 - Implement an Angular app
 - Bazel watcher for local development (watch for code changes, etc.)
+- These rules are kinda boiler paltey so you could wrap them up into gen rules. (refers to tests)
 
 # Done
 
