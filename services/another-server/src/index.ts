@@ -11,7 +11,7 @@ export const start = () => {
   app.get('/alive', (req, res) => res.send('alive'));
 
   app.get('/name', (req, res) => {
-    res.json({ name: 'will be here', Constants });
+    res.json({ name: 'will be here soon!', Constants });
   });
 
   app.listen(3001, () => console.log('another server listening on port 3001'));

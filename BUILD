@@ -13,3 +13,13 @@ ts_config(
         ":tsconfig.json",
     ],
 )
+
+load("@com_github_atlassian_bazel_tools//multirun:def.bzl", "multirun", "command")
+multirun(
+    name = "run_all_parallel",
+    commands = [
+        "//services/server/src:dev_server",
+        "//services/another-server/src:dev_server",
+    ],
+    parallel = True,
+)
