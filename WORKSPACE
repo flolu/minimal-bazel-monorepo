@@ -8,12 +8,6 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/1.0.1/rules_nodejs-1.0.1.tar.gz"],
 )
 
-#http_archive(
-#    name = "build_bazel_rules_nodejs",
-#    sha256 = "16fc00ab0d1e538e88f084272316c0693a2e9007d64f45529b82f6230aedb073",
-#    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/0.42.2/rules_nodejs-0.42.2.tar.gz"],
-#)
-
 load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories","yarn_install")
 node_repositories(package_json = ["//:package.json"])
 yarn_install(
@@ -31,10 +25,11 @@ ts_setup_workspace()
 # docker
 http_archive(
     name = "io_bazel_rules_docker",
-    sha256 = "14ac30773fdb393ddec90e158c9ec7ebb3f8a4fd533ec2abbfd8789ad81a284b",
-    strip_prefix = "rules_docker-0.12.1",
-    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.12.1/rules_docker-v0.12.1.tar.gz"],
+    sha256 = "df13123c44b4a4ff2c2f337b906763879d94871d16411bf82dcfeba892b58607",
+    strip_prefix = "rules_docker-0.13.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.13.0/rules_docker-v0.13.0.tar.gz"],
 )
+
 load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
 container_repositories()
 load("@io_bazel_rules_docker//nodejs:image.bzl", _nodejs_image_repos = "repositories")

@@ -61,7 +61,7 @@ jest_test(
     ],
 )
 
-# // TODO is it possible to simoultaneously start multiple dev_servers?....then i wouldnt need docker-compose
+# // TODO is it possible to simoultaneously start multiple dev_servers?....then i wouldnt need docker-compose https://github.com/atlassian/bazel-tools/tree/master/multirun
 
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
 nodejs_binary(
@@ -69,8 +69,6 @@ nodejs_binary(
     data = [":lib"],
     entry_point = ":index.ts",
 )
-
-# // TODO fix: this throws weird error after updating to 1.0.1
 
 load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
 nodejs_image(
